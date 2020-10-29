@@ -33,7 +33,7 @@ public class SimpleCalculator {
 	
 	private String[] tokenize(String text){
 		if(text.startsWith("//")){
-			Matcher match = Pattern.compile("//(.)\n(.*)").matcher(text);
+			Matcher match = Pattern.compile("//(.*)\n(.*)").matcher(text);
 			match.matches();
 			String delimiter = match.group(1);
 			String numbers = match.group(2);

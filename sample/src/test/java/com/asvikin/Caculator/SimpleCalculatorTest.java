@@ -72,4 +72,16 @@ public class SimpleCalculatorTest {
 		int actual = cal.Add(input);
 		assertEquals(9,actual);
 	}
+	@Test
+	public void givenDelemiterOfAnySizeThenAccept(){
+		String input = "//***\n3***6***3***1";
+		int actual = cal.Add(input);
+		assertEquals(13,actual);
+	}
+	@Test
+	public void givenDelemiterOfAnySize2ThenAccept(){
+		String input = "//*$*\n3*$*6*$*3*$*1";
+		int actual = cal.Add(input);
+		assertEquals(13,actual);
+	}
 }
