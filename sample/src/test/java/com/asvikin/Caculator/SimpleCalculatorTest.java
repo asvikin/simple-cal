@@ -42,9 +42,16 @@ public class SimpleCalculatorTest {
 		int actual = cal.Add(input);
 		assertEquals(16,actual);
 	}
+	
 	@Test
 	public void givenNumberwithMulipleNewLineThenAccept(){
 		String input = "3,6\n7\n";
+		int actual = cal.Add(input);
+		assertEquals(16,actual);
+	}
+	@Test
+	public void givenNumberwithCoustemDelimiterLineThenAccept(){
+		String input = "//;\n3;6;7;";
 		int actual = cal.Add(input);
 		assertEquals(16,actual);
 	}
