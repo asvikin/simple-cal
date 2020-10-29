@@ -55,4 +55,15 @@ public class SimpleCalculatorTest {
 		int actual = cal.Add(input);
 		assertEquals(16,actual);
 	}
+	@Test
+	public void givenNumberwithCoustemDelimiterRegxThenAccept(){
+		String input = "//.\n3.6.7.";
+		int actual = cal.Add(input);
+		assertEquals(16,actual);
+	}
+	@Test(expected = NumberFormatException.class)
+	public void givenNegativeNumberThenRiseExection(){
+		String input = "//.\n3.6.-7.";
+		int actual = cal.Add(input);
+	}
 }
