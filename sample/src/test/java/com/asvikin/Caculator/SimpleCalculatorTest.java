@@ -61,9 +61,15 @@ public class SimpleCalculatorTest {
 		int actual = cal.Add(input);
 		assertEquals(16,actual);
 	}
-	@Test(expected = NumberFormatException.class)
+	@Test(expected = RuntimeException.class)
 	public void givenNegativeNumberThenRiseExection(){
 		String input = "//.\n3.6.-7.";
 		int actual = cal.Add(input);
+	}
+	@Test
+	public void givenNumberGreaterThan1000ThenIgnoreInResult(){
+		String input = "//.\n3.6.1003.";
+		int actual = cal.Add(input);
+		assertEquals(9,actual);
 	}
 }

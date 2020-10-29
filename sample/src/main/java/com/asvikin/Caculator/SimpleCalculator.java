@@ -11,7 +11,7 @@ public class SimpleCalculator {
 		System.out.println(Arrays.toString(stringNums)+stringNums.length);
 		int nums[] = convertToInt(stringNums);
 		List<Integer> negativeNums = getAllNeagtive(nums);
-		if(negativeNums.size()!=0)throw new NumberFormatException("Input Contiains Negative"+negativeNums);
+		if(negativeNums.size()!=0)throw new RuntimeException("Input Contiains Negative numbers"+negativeNums);
 		return sumUp(nums);
 	}
 	
@@ -25,7 +25,8 @@ public class SimpleCalculator {
 	private int sumUp(int[] nums) {
 		int sum=0;
 		for(int i=0;i<nums.length;i++){
-			sum+=nums[i];
+			if(nums[i]<1001)
+				sum+=nums[i];
 		}
 		return sum;
 	}
